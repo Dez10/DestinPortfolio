@@ -975,17 +975,33 @@ footer {
 
   /* Project Slider */
   .slider {
-    --width: 85vw;
-    --height: 48vw;
+    --width: 85vw !important;
+    --height: 48vw !important;
+    mask-image: none;
+    -webkit-mask-image: none;
+    overflow: visible;
+  }
+
+  .slider .list {
+    min-width: unset;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
   }
 
   .slider .list .item {
+    position: relative;
+    left: 0;
+    animation: none;
     width: 85vw;
     height: 48vw;
+    flex: 0 0 85vw;
+    scroll-snap-align: center;
   }
 
   .slider .list .item video {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     border-radius: 0.8rem;
   }
 
@@ -1081,17 +1097,17 @@ footer {
 
   /* Project Slider */
   .slider {
-    --width: 90vw;
-    --height: 55vw;
+    --width: 90vw !important;
+    --height: 55vw !important;
   }
 
   .slider .list .item {
     width: 90vw;
     height: 55vw;
+    flex: 0 0 90vw;
   }
 
   .slider .list .item video {
-    margin-top: 1rem;
     border-radius: 0.6rem;
   }
 
@@ -1187,17 +1203,17 @@ footer {
 
   /* Project Slider */
   .slider {
-    --width: 95vw;
-    --height: 60vw;
+    --width: 95vw !important;
+    --height: 60vw !important;
   }
 
   .slider .list .item {
     width: 95vw;
     height: 60vw;
+    flex: 0 0 95vw;
   }
 
   .slider .list .item video {
-    margin-top: 0.5rem;
     border-radius: 0.5rem;
   }
 }
