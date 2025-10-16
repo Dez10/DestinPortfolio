@@ -358,6 +358,33 @@ main h1 {
   scale: 1.2;
 }
 
+.project-details {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(5, 15, 27, 0.55);
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.project-name {
+  font-size: clamp(1rem, 1.3vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.project-tags {
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  color: rgba(235, 235, 235, 0.85);
+}
+
 /* Project Links */
 .project-link {
   text-decoration: none;
@@ -1000,6 +1027,9 @@ footer {
     animation: none;
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   .slider .list .item video {
@@ -1010,6 +1040,24 @@ footer {
     aspect-ratio: 16 / 9;
     object-fit: cover;
     min-height: 200px;
+  }
+
+  .project-details {
+    position: static;
+    background: transparent;
+    backdrop-filter: none;
+    border: 0;
+    padding: 0;
+    color: #f8f8f8;
+  }
+
+  .project-name {
+    font-size: 1.1rem;
+  }
+
+  .project-tags {
+    font-size: 0.85rem;
+    color: rgba(235, 235, 235, 0.9);
   }
 
   /* Footer */
