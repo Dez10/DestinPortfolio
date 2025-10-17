@@ -7,21 +7,37 @@ document.querySelectorAll(".card").forEach((card) => {
   });
 });
 
-const video1 = document.getElementById("projectVideo1");
-const video2 = document.getElementById("projectVideo2");
-const video3 = document.getElementById("projectVideo3");
-const video4 = document.getElementById("projectVideo4");
+const projectVideos = Array.from(
+  document.querySelectorAll('[id^="projectVideo"]')
+);
+const prefersCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
 
-const videoList = [video1, video2, video3, video4];
+if (prefersCoarsePointer) {
+  const showFirstFrame = (video) => {
+    if (video.readyState >= 2) {
+      try {
+        video.currentTime = 0.001; // nudge for iOS to render first frame
+      } catch (error) {
+        console.warn("Video seek preview failed", error);
+      }
+      video.pause();
+    }
+  };
 
-videoList.forEach(function (video) {
-  video.addEventListener("mouseover", function () {
-    video.play();
+  projectVideos.forEach((video) => {
+    video.preload = "auto";
+    const handleLoaded = () => showFirstFrame(video);
+    video.addEventListener("loadedmetadata", handleLoaded);
+    video.addEventListener("loadeddata", handleLoaded);
+    video.addEventListener("suspend", handleLoaded);
+    video.load();
   });
-  video.addEventListener("mouseout", function () {
-    video.pause();
+} else {
+  projectVideos.forEach((video) => {
+    video.addEventListener("mouseover", () => video.play());
+    video.addEventListener("mouseout", () => video.pause());
   });
-});
+}
 
 // FORM HANDLING
 document.getElementById("contactForm").addEventListener("submit", function (e) {

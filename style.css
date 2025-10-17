@@ -358,33 +358,6 @@ main h1 {
   scale: 1.2;
 }
 
-.project-details {
-  position: absolute;
-  left: 1.5rem;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  padding: 0.9rem 1.1rem;
-  border-radius: 1rem;
-  background: rgba(5, 15, 27, 0.55);
-  color: #f5f5f5;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.project-name {
-  font-size: clamp(1rem, 1.3vw, 1.4rem);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.project-tags {
-  font-size: clamp(0.75rem, 1vw, 0.95rem);
-  color: rgba(235, 235, 235, 0.85);
-}
-
 /* Project Links */
 .project-link {
   text-decoration: none;
