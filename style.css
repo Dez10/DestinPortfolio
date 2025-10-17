@@ -227,7 +227,7 @@ main h1 {
 }
 
 .card-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
   margin-bottom: 2rem;
   color: white;
@@ -242,6 +242,38 @@ main h1 {
   font-size: 1rem;
   z-index: 3;
   position: relative;
+}
+
+.card .resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.card .resume-link:hover {
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.card .resume-link svg {
+  width: 28px;
+  height: 28px;
+}
+
+.card .resume-link span {
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
 }
 
 .bento-grid .background-img {
@@ -262,7 +294,7 @@ main h1 {
 .model-box {
   position: relative;
   right: 15%;
-  top: -170%;
+  top: -180%;
   height: 60rem;
   width: 60rem;
 }
@@ -686,6 +718,18 @@ footer {
     height: 80vh;
   }
 
+  .model-box {
+    right: -4%;
+    top: -180%;
+    width: 42rem;
+    height: 42rem;
+  }
+
+  .info-3D {
+    width: 125%;
+    height: 125%;
+  }
+
   /* Bento Grid Cards */
   .card {
     padding: 1.8rem;
@@ -797,6 +841,18 @@ footer {
     grid-template-areas:
       "intro tech"
       "time passion";
+  }
+
+  .model-box {
+    right: -2%;
+    top: -90%;
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .info-3D {
+    width: 115%;
+    height: 115%;
   }
 
   /* Bento Grid Cards */
@@ -930,12 +986,21 @@ footer {
   }
 
 
-
   /* Model Box */
   .model-box {
-    right: 5%;
-    top: 20%;
-    scale: 0.8;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 320px;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .info-3D {
+    width: 100%;
+    height: 100%;
   }
 
   /* Sections Spacing */
@@ -1172,8 +1237,9 @@ footer {
   }
 
   .model-box {
-    right: 2%;
-    top: 27%;
+    right: 0;
+    top: 0;
+    height: 260px;
   }
 
   .planet-3D {
